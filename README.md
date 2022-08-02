@@ -5,16 +5,16 @@ Project 9: Philosophers - Eighth project for the formation of software engineers
 
 ## Necessary concepts
 
-### What is a processor?
+#### What is a processor?
 - 
 
-### What is the core?
+#### What is the core?
 - 
 
-### What are processes?
+#### What are processes?
 - 
 
-### What are threads?
+#### What are threads?
 - 
 
 ## Extern functions
