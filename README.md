@@ -7,12 +7,14 @@ Project 9: Philosophers - Eighth project for the formation of software engineers
 
 ### What is a processor?
 - 
+
 ### What is the core?
 - 
-### What is a processor?
-- 
-### What are threads?
-- 
+
 ### What are processes?
 - 
+
+### What are threads?
+- 
+
 ## Extern functions
