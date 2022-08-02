@@ -45,3 +45,33 @@ int	main(void)
 ```
 Teste do printf
 ````
+<h1></h1>
+
+#### malloc
+- Description: The malloc() function allocates size bytes and returns a pointer to the allocated memory. The memory is not initialized. If size is 0, then malloc() returns either NULL, or a unique pointer value that can later be successfully passed to free().
+- Parameter: `size_t size` - 
+- Return value: pointer to the allocated memory.
+- Prototype:
+```c
+void	*malloc(size_t size)
+```
+
+- malloc example:
+```c
+#include <unistd.h>
+/*
+Malloc library.
+*/
+#include <stdlib.h>
+
+int	main(void)
+{
+	printf("Hello world!");
+	return 0;
+}
+```
+#### output
+```
+Hello world!
+````
+<h1></h1>
