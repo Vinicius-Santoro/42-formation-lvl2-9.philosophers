@@ -49,17 +49,30 @@ void	*memset(void *s, int c, size_t n)
 
 - memset example:
 ```c
-#include <unistd.h>
+#include <stdio.h>
+/*
+Memset library
+*/
 
-int	main(void)
+#define  BUF_SIZE  20
+ 
+int main(void)
 {
-	printf("Hello world!");
-	return 0;
+   char buffer[BUF_SIZE + 1];
+   char *string;
+ 
+   memset(buffer, 0, sizeof(buffer));
+   string = (char *) memset(buffer,'A', 10);
+   printf("\nBuffer contents 1: %s\n", string);
+   memset(buffer+10, 'B', 10);
+   printf("\nBuffer contents 2: %s\n", buffer);
 }
+ 
 ```
 #### output
 ```
-Teste do printf
+Buffer contents 1: AAAAAAAAAA
+Buffer contents 2: AAAAAAAAAABBBBBBBBBB
 ````
 <h1></h1>
 
