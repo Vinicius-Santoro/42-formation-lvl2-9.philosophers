@@ -26,13 +26,13 @@ We can use some extern functions. Follows a description of each of them.
 * [write](#write)
 * [usleep](#usleep)
 * [gettimeofday](#gettimeofday)
+* [pthread_join](#pthread_join)
 * [pthread_create](#pthread_create)
 * [pthread_detach](#pthread_detach)
-* [pthread_join](#pthread_join)
 * [pthread_mutex_init](#pthread_mutex_init)
-* [pthread_mutex_destroy](#pthread_mutex_destroy)
 * [pthread_mutex_lock](#pthread_mutex_lock)
-* [pthread_mutex_unlock](#pthread_mutex_unlock)
+* * [pthread_mutex_unlock](#pthread_mutex_unlock)
+* [pthread_mutex_destroy](#pthread_mutex_destroy)
 
 <h1></h1>
 
