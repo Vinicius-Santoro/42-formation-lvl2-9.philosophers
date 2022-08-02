@@ -20,6 +20,22 @@ Project 9: Philosophers - Eighth project for the formation of software engineers
 ## Extern functions
 We can use some extern functions. Follows a description of each of them.
 
+* [memset](#memset)
+* [malloc](#malloc)
+* [free](#free)
+* [write](#write)
+* [usleep](#usleep)
+* [gettimeofday](#gettimeofday)
+* [pthread_create](#pthread_create)
+* [pthread_detach](#pthread_detach)
+* [pthread_join](#pthread_join)
+* [pthread_mutex_init](#pthread_mutex_init)
+* [pthread_mutex_destroy](#pthread_mutex_destroy)
+* [pthread_mutex_lock](#pthread_mutex_lock)
+* [pthread_mutex_unlock](#pthread_mutex_unlock)
+
+<h1></h1>
+
 #### memset
 - Description: The  memset() function fills the first `n` bytes of the memory area pointed to by `s` with the constant byte `c`.
 - Parameter: `void *s` - 
