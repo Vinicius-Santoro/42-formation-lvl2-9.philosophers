@@ -53,6 +53,7 @@ void	*memset(void *s, int c, size_t n)
 /*
 Memset library
 */
+#include <string.h>
 
 #define  BUF_SIZE  20
  
