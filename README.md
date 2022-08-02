@@ -21,26 +21,27 @@ Project 9: Philosophers - Eighth project for the formation of software engineers
 We can use some extern functions. Follows a description of each of them.
 
 #### memset
-- Description: The  memset() function fills the first n bytes of the memory area pointed to by s with the constant byte c.
+- Description: The  memset() function fills the first `n` bytes of the memory area pointed to by `s` with the constant byte `c`.
 - Parameter: `void *s` - 
 - Parameter: `int c` -
 - Parameter: `size_t n` -
 - Return value: 
 - Prototype:
 ```c
-void *memset(void *s, int c, size_t n)
+void	*memset(void *s, int c, size_t n)
 ```
 
 - memset example:
 ```c
 #include <unistd.h>
 
-int	main(void){
-	int id = fork();
-	if (id == 0)
-		printf("Hello, child process id: %d\n", id);
-	else
-		printf("Hello, parent process id: %d\n", id);
+int	main(void)
+{
+	printf("Hello world!");
 	return 0;
 }
 ```
+#### output
+```
+Teste do printf
+````
