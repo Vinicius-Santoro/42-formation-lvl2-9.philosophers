@@ -3,45 +3,53 @@ Project 9: Philosophers - Eighth project for the formation of software engineers
 
 - This project is about the basics of threading a process. How to create threads and use mutexes.
 
-## Necessary concepts
-
-#### What is a processor?
-- 
-
-#### What is the core?
-- 
-
-#### What are processes?
-- 
-
-#### What are threads?
-- 
-
 ## Sumary
 
+#### Necessary concepts
+
+Some necessary concepts to develop this project.
+
+- [What is the processor?](#processor)
+- [What is the core?](#core)
+- [What are processes?](#processes)
+- [What are threads?](#threads)
+
 #### Extern functions
+
 We can use some extern functions. Follows a description of each of them.
 
-* [memset](#memset)
-* [malloc](#malloc)
-* [free](#free)
-* [write](#write)
-* [usleep](#usleep)
-* [gettimeofday](#gettimeofday)
-* [pthread_join](#pthread_join)
-* [pthread_create](#pthread_create)
-* [pthread_detach](#pthread_detach)
-* [pthread_mutex_init](#pthread_mutex_init)
-* [pthread_mutex_lock](#pthread_mutex_lock)
-* [pthread_mutex_unlock](#pthread_mutex_unlock)
-* [pthread_mutex_destroy](#pthread_mutex_destroy)
+- [memset](#memset)
+- [malloc](#malloc)
+- [free](#free)
+- [write](#write)
+- [usleep](#usleep)
+- [gettimeofday](#gettimeofday)
+- [pthread_join](#pthread_join)
+- [pthread_create](#pthread_create)
+- [pthread_detach](#pthread_detach)
+- [pthread_mutex_init](#pthread_mutex_init)
+- [pthread_mutex_lock](#pthread_mutex_lock)
+- [pthread_mutex_unlock](#pthread_mutex_unlock)
+- [pthread_mutex_destroy](#pthread_mutex_destroy)
 
 #### Useful links
 
-* [developing](#developing)
-* [developing](#developing)
-* [developing](#developing)
-<h1></h1>
+- [developing](#developing)
+- [developing](#developing)
+- [developing](#developing)
+
+## Necessary concepts
+
+#### Processor
+- asd
+#### Core
+- asd
+#### Processes
+- asd
+#### Threads
+- asd
+
+## Extern functions
 
 #### memset
 - Description: The  memset() function fills the first `n` bytes of the memory area pointed to by `s` with the constant byte `c`.
