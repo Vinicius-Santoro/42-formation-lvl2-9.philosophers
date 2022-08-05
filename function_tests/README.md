@@ -4,7 +4,7 @@
 
 ## Functions
 
-- [`memset`](function_tests/memset.c)
+- [`memset`](memset.c)
 - malloc
 - free 
 - write
