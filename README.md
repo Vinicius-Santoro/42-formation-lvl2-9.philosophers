@@ -53,11 +53,11 @@ We can use some extern functions. Follows a description of each of them.
 
 #### memset
 - Description: The  memset() function fills the first `n` bytes of the memory area pointed to by `s` with the constant byte `c`.
-- Parameter: `void *s` - 
-- Parameter: `int c` -
-- Parameter: `size_t n` -
-- Return value: 
+- Parameter: `void *s` - string to be filled.
+- Parameter: `int c` - character that will be input.
+- Parameter: `size_t n` - number of bytes to be input.
 - Prototype:
+
 ```c
 void	*memset(void *s, int c, size_t n)
 ```
