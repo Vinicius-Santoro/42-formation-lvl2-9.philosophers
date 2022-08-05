@@ -4,7 +4,7 @@
 
 ## Functions
 
-- memset
+- [`memset`](https://github.com/Vinicius-Santoro/42-formation-lvl2-9.philosophers/blob/main/function_tests/memset.c)
 - malloc
 - free 
 - write
