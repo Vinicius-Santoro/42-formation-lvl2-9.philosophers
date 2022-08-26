@@ -13,6 +13,7 @@ Some necessary concepts to develop this project.
 - [What is the core?](#core)
 - [What are processes?](#processes)
 - [What are threads?](#threads)
+- [What are threads?](#threads)
 
 #### Extern functions
 
