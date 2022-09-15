@@ -243,4 +243,75 @@ int	main(void)
 } 
 ```
 
+<h1></h1>
+
+#### usleep
+- Description: suspend execution for microsecond intervals.
+- Parameter: `useconds_t usec` - microseconds.
+- Return: 0 on success, -1 on error.
+- Prototype: 
+
+```c
+int	usleep(useconds_t usec);
+```
+
+-  example:
+```c
+#include <stdio.h>
+/*
+Usleep library
+*/
+#include <unistd.h>
+
+int main(void)
+{
+    unsigned int mSeconds;
+    int returnCode;
+
+	/*
+	getting microseconds
+	*/
+    printf("Insert the microseconds: ");
+    scanf("%d", &mSeconds);
+
+    printf("The value insered is: %d\n", mSeconds);
+
+	/*
+	usleep function.
+	*/
+    returnCode = usleep(mSeconds);
+    if(!returnCode)
+        printf("Sucess execution!\nExit code: %d\n", returnCode);
+    else
+        printf("Failure execution!\nExit code: %d\n", returnCode);
+    return (0);
+} 
+
+<h1></h1>
+
+#### 
+- Description: 
+- Parameter: `int fd` - file descriptor.
+- Return: 
+- Prototype:
+
+```c
+
+```
+
+-  example:
+```c
+/*
+library
+*/
+#include <>
+
+int	main(void)
+{
+
+	return (0);
+} 
+```
+
+
 
