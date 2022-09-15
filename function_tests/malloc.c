@@ -12,21 +12,20 @@
 
 #include <stdio.h>
 /*
-Memset library
+Malloc library
 */
-#include <string.h>
-
-#define  BUF_SIZE  20
+#include <stdlib.h>
  
 int main(void)
 {
-	char 	buffer[BUF_SIZE + 1];
-	char 	*string;
-
-	memset(buffer, 0, sizeof(buffer));
-	string = (char *) memset(buffer,'A', 10);
-	printf("\nBuffer contents 1: %s\n", string);
-	memset(buffer + 10, 'B', 10);
-	printf("\nBuffer contents 2: %s\n", buffer);
+    char *name;
+    name = (char *) malloc(21);
+ 
+    printf("Insert your name: ");
+    gets(name);
+ 
+    printf("%sn", name);
+ 
+    return 0;
 }
  

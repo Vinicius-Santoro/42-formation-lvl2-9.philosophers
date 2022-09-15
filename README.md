@@ -104,14 +104,16 @@ Malloc library.
 */
 #include <stdlib.h>
 
-int	main(void)
+int main(void)
 {
-	printf("Hello world!");
-	return 0;
+    char *name;
+    name = (char *) malloc(21);
+ 
+    printf("Insert your name: ");
+    gets(name);
+ 
+    printf("%sn", name);
+ 
+    return 0;
 }
 ```
-#### output
-```
-Hello world!
-````
-<h1></h1>
