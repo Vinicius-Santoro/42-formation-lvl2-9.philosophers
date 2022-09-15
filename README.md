@@ -151,10 +151,11 @@ int main()
     return 0;
 }
 ```
+<h1></h1>
 
 #### free
 - Description: The free() function deallocates the memory previously allocated by a call to calloc, malloc, or realloc.
-- Parameter: `void *ptr` - 
+- Parameter: `void *ptr` - pointer to be deallocated.
 - Prototype:
 ```c
 void    free(void *ptr)
@@ -207,6 +208,7 @@ int main()
     return 0;
 }
 ```
+<h1></h1>
 
 #### write
 - Description:  Writes cnt bytes from buf to the file associated with fd.
@@ -215,11 +217,12 @@ int main()
 - Parameter: `size_t nbyte` - length of buffer
 - Return: If successful, return the number of bytes actually written to the fd. Else, return 0 on reaching end of file, or return -1 on error.
 - Prototype:
+
 ```c
 size_t write (int fd, void* buf, size_t nbyte)
 ```
 
-- free example:
+- write example:
 ```c
 /*
 Write library
