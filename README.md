@@ -33,12 +33,6 @@ We can use some extern functions. Follows a description of each of them.
 - [pthread_mutex_unlock](#pthread_mutex_unlock)
 - [pthread_mutex_destroy](#pthread_mutex_destroy)
 
-#### Useful links
-
-- [developing](#developing)
-- [developing](#developing)
-- [developing](#developing)
-
 ## Necessary concepts
 
 #### Processor

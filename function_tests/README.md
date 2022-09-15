@@ -5,6 +5,7 @@
 ## Functions
 
 - [`memset`](memset.c)
+- [`malloc`](malloc.c)
 - malloc
 - free 
 - write
