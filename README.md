@@ -232,16 +232,14 @@ Write library
 int	main(void)
 {
 	char *name = "Vinicius";
-
-    /*
-    [0]: stdin
-    [1]: stdout
-    [2]: error 
-    */
 	write(1, name, sizeof(*name * sizeof(char)));
 	return (0);
 } 
 ```
+#### output
+```
+Vinicius
+````
 
 <h1></h1>
 
