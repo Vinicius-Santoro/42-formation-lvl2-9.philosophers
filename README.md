@@ -313,12 +313,12 @@ int main(void)
 
     gettimeofday(&tv,&tz);
 
-second_and_microsecond_for_milisecond = ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
-printf("Seconds since 1/1/1970.......: %lu\n",tv.tv_sec);
-printf("Microseconds.................: %ld\n",tv.tv_usec);
-printf("Seconds for Miliseconds:.....: %ld\n", (tv.tv_sec * 1000));
-printf("Microseconds for Miliseconds.: %ld\n", (tv.tv_usec / 1000));
-printf("Sec and Microsec for Milisec.: %ld", second_and_microsecond_for_milisecond);
+	second_and_microsecond_for_milisecond = ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
+	printf("Seconds since 1/1/1970.......: %lu\n",tv.tv_sec);
+	printf("Microseconds.................: %ld\n",tv.tv_usec);
+	printf("Seconds for Miliseconds:.....: %ld\n", (tv.tv_sec * 1000));
+	printf("Microseconds for Miliseconds.: %ld\n", (tv.tv_usec / 1000));
+	printf("Sec and Microsec for Milisec.: %ld", second_and_microsecond_for_milisecond);
 return (0);
 }
 ```
