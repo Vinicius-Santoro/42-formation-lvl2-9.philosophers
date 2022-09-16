@@ -286,7 +286,7 @@ int main(void)
         printf("Failure execution!\nExit code: %d\n", returnCode);
     return (0);
 }
-
+```
 <h1></h1>
 
 #### gettimeofday
@@ -323,6 +323,7 @@ int main(void)
     return (0);
 }
 ```
+
 #### output
 ```
 Seconds since 01/01/1970.......: 1663294030
