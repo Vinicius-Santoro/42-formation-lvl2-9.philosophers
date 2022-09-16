@@ -34,14 +34,25 @@ struct timezone {
 */
 int main(void)
 {
-    struct timeval tv;
-    struct timezone tz;
+	/*
+	1 second =  1.000.000 microsecond
+	1 microsecond = 0,001 milisecond
+
+	The timeval structure contains two members, time_t variable tv_sec and suseconds_t variable tv_usec.
+	The first, tv_sec, is a time_t value, the number of seconds elapsed since January 1, 1970.
+	The second is a microsecond value, which the computer knows but isn’t included with the time_t value.
+	*/
+    struct timeval	tv;
+    struct timezone	tz;
+    long int		second_and_microsecond_for_milisecond;
 
     gettimeofday(&tv,&tz);
 
-    printf("Seconds since 1/1/1970: %lu\n",tv.tv_sec);
-    printf("Microseconds: %ld\n",tv.tv_usec);
-    printf("Minutes west of SP: %d\n",tz.tz_minuteswest);
-    printf("Daylight Saving Time adjustment: %d\n",tz.tz_dsttime);
+	second_and_microsecond_for_milisecond = ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
+    printf("Seconds since 1/1/1970.......: %lu\n",tv.tv_sec);
+    printf("Microseconds.................: %ld\n",tv.tv_usec);
+	printf("Seconds for Miliseconds:.....: %ld\n", (tv.tv_sec * 1000));
+	printf("Microseconds for Miliseconds.: %ld\n", (tv.tv_usec / 1000));
+    printf("Sec and Microsec for Milisec.: %ld", second_and_microsecond_for_milisecond);
     return (0);
 }

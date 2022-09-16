@@ -285,7 +285,52 @@ int main(void)
     else
         printf("Failure execution!\nExit code: %d\n", returnCode);
     return (0);
-} 
+}
+
+<h1></h1>
+
+#### gettimeofday
+- Description: can get the time.
+- Parameter: `int fd` - file descriptor.
+- Return: 0 on success, -1 on error.
+- Prototype:
+```c
+ int gettimeofday(struct timeval *tv, struct timezone *tz)
+```
+
+-  example:
+```c
+#include <stdio.h>
+
+/*
+Gettimeofday library
+*/
+#include <sys/time.h>
+int main(void)
+{
+    struct timeval	tv;
+    struct timezone	tz;
+    long int        second_and_microsecond_for_milisecond;
+
+    gettimeofday(&tv,&tz);
+
+	second_and_microsecond_for_milisecond = ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
+    printf("Seconds since 1/1/1970.......: %lu\n",tv.tv_sec);
+    printf("Microseconds.................: %ld\n",tv.tv_usec);
+	printf("Seconds for Miliseconds:.....: %ld\n", (tv.tv_sec * 1000));
+	printf("Microseconds for Miliseconds.: %ld\n", (tv.tv_usec / 1000));
+    printf("Sec and Microsec for Milisec.: %ld", second_and_microsecond_for_milisecond);
+    return (0);
+}
+```
+#### output
+```
+Seconds since 01/01/1970.......: 1663294030
+Microseconds.................: 601024
+Seconds for Miliseconds:.....: 1663294030000
+Microseconds for Miliseconds.: 601
+Sec and Microsec for Milisec.: 1663294030601
+````
 
 <h1></h1>
 
@@ -312,6 +357,9 @@ int	main(void)
 	return (0);
 } 
 ```
+
+
+
 
 
 
