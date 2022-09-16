@@ -262,26 +262,26 @@ Usleep library
 
 int main(void)
 {
-    unsigned int mSeconds;
-    int returnCode;
+	unsigned int mSeconds;
+	int returnCode;
 
 	/*
 	getting microseconds
 	*/
-    printf("Insert the microseconds: ");
-    scanf("%d", &mSeconds);
+	printf("Insert the microseconds: ");
+	scanf("%d", &mSeconds);
 
-    printf("The value insered is: %d\n", mSeconds);
+	printf("The value insered is: %d\n", mSeconds);
 
 	/*
 	usleep function.
 	*/
-    returnCode = usleep(mSeconds);
-    if(!returnCode)
-        printf("Sucess execution!\nExit code: %d\n", returnCode);
-    else
-        printf("Failure execution!\nExit code: %d\n", returnCode);
-    return (0);
+	returnCode = usleep(mSeconds);
+	if(!returnCode)
+		printf("Sucess execution!\nExit code: %d\n", returnCode);
+	else
+		printf("Failure execution!\nExit code: %d\n", returnCode);
+	return (0);
 }
 ```
 <h1></h1>
