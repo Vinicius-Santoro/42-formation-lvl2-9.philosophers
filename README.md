@@ -288,7 +288,8 @@ int main(void)
 
 #### gettimeofday
 - Description: can get the time.
-- Parameter: `int fd` - file descriptor.
+- Parameter: `struct timeval *tv` - struct with number of seconds and microseconds since the Epoch.
+- Parameter: `struct timezone *tz` - struct with timezone.
 - Return: 0 on success, -1 on error.
 - Prototype:
 ```c
