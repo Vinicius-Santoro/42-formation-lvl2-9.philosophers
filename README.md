@@ -307,11 +307,11 @@ Gettimeofday library
 
 int main(void)
 {
-    struct timeval	tv;
-    struct timezone	tz;
-    long int        second_and_microsecond_for_milisecond;
+	struct timeval	tv;
+	struct timezone	tz;
+	long int        second_and_microsecond_for_milisecond;
 
-    gettimeofday(&tv,&tz);
+	gettimeofday(&tv,&tz);
 
 	second_and_microsecond_for_milisecond = ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
 	printf("Seconds since 1/1/1970.......: %lu\n",tv.tv_sec);
@@ -319,7 +319,7 @@ int main(void)
 	printf("Seconds for Miliseconds:.....: %ld\n", (tv.tv_sec * 1000));
 	printf("Microseconds for Miliseconds.: %ld\n", (tv.tv_usec / 1000));
 	printf("Sec and Microsec for Milisec.: %ld", second_and_microsecond_for_milisecond);
-return (0);
+	return (0);
 }
 ```
 
