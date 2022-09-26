@@ -33,7 +33,7 @@ int	main()
 	int i;
 
 	for(i = 0; i < 2; i++)
-		pthread_create(thread + i, NULL, routine, NULL);
+		pthread_create(&thread[i], NULL, routine, NULL);
 	for(i = 0; i < 2; i++)
 		pthread_join(thread[i], NULL);
 
