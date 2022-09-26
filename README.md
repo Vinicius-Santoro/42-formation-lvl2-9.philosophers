@@ -32,6 +32,12 @@ We can use some extern functions. Follows a description of each of them.
 - [pthread_mutex_unlock](#pthread_mutex_unlock)
 - [pthread_mutex_destroy](#pthread_mutex_destroy)
 
+#### useful links:
+
+- [Short introduction to threads (pthreads)](https://youtu.be/d9s_d28yJq0)
+- [Difference between processes and threads](https://youtu.be/IKG1P4rgm54)
+
+
 ## Necessary concepts
 
 #### Processor
@@ -359,16 +365,8 @@ int	main(void)
 ```
 #### output
 ```
-Seconds since 01/01/1970.......: 1663294030
-Microseconds.................: 601024
-Seconds for Miliseconds:.....: 1663294030000
-Microseconds for Miliseconds.: 601
-Sec and Microsec for Milisec.: 1663294030601
+
 ````
-#### useful links:
-
-- https://youtu.be/xoXzp4B8aQk
-
 
 <h1></h1>
 
