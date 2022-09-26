@@ -334,6 +334,44 @@ Sec and Microsec for Milisec.: 1663294030601
 
 <h1></h1>
 
+#### pthread_create
+- Description: 
+- Parameter: `int fd` - file descriptor.
+- Return: 
+- Prototype:
+
+```c
+
+```
+
+-  example:
+```c
+/*
+library
+*/
+#include <>
+
+int	main(void)
+{
+
+	return (0);
+} 
+```
+#### output
+```
+Seconds since 01/01/1970.......: 1663294030
+Microseconds.................: 601024
+Seconds for Miliseconds:.....: 1663294030000
+Microseconds for Miliseconds.: 601
+Sec and Microsec for Milisec.: 1663294030601
+````
+#### useful links:
+
+- https://youtu.be/xoXzp4B8aQk
+
+
+<h1></h1>
+
 #### 
 - Description: 
 - Parameter: `int fd` - file descriptor.
@@ -357,6 +395,7 @@ int	main(void)
 	return (0);
 } 
 ```
+
 
 
 
