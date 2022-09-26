@@ -333,21 +333,30 @@ Pthread_create Library
 
 void	*routine()
 {
-	printf("Hello from thread!\n");
+	printf("Hello from thread\n");
+	sleep(3);
+	printf("Ending thread\n");
 }
 
 int	main()
 {
-	pthread_t thread;
+	pthread_t thread[2];
+	int i;
 
-	pthread_create(&thread, NULL, routine, NULL);
-	pthread_join(thread, NULL);
+	for(i = 0; i < 2; i++)
+		pthread_create(thread + i, NULL, routine, NULL);
+	for(i = 0; i < 2; i++)
+		pthread_join(thread[i], NULL);
+
 	return(0);
 }
 ```
 #### output
 ```
-
+Hello from thread
+Hello from thread
+Ending thread
+Ending thread
 ````
 
 <h1></h1>
