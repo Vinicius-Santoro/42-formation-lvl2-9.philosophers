@@ -37,6 +37,8 @@ We can use some extern functions. Follows a description of each of them.
 - [Short introduction to threads (pthreads)](https://youtu.be/d9s_d28yJq0)
 - [Difference between processes and threads](https://youtu.be/IKG1P4rgm54)
 
+#### How the project works
+
 
 ## Necessary concepts
 
@@ -56,4 +58,4 @@ We can use some extern functions. Follows a description of each of them.
 - The number of threads you have depends on the number of cores in your CPU. Each CPU core can have two threads. So a processor with two cores will have four threads. A processor with eight cores will have 16 threads.
 - Threads are important to the function of your computer because they determine how many tasks your computer can perform at any given time.
 
-## how the project works
+## How the project works
