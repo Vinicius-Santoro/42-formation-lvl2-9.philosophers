@@ -36,6 +36,8 @@ We can use some extern functions. Follows a description of each of them.
 
 - [Short introduction to threads (pthreads)](https://youtu.be/d9s_d28yJq0)
 - [Difference between processes and threads](https://youtu.be/IKG1P4rgm54)
+- [What is a mutex in C?](https://youtu.be/oq29KUy29iQ)
+
 
 
 ## Necessary concepts

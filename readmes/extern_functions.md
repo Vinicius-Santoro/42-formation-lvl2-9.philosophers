@@ -303,27 +303,46 @@ Sec and Microsec for Milisec.: 1663294030601
 <h1></h1>
 
 #### pthread_create
-- Description: 
-- Parameter: `int fd` - file descriptor.
-- Return: 
+- Description: create a new thread
+- Parameter: `pthread_t *restrict thread` - thread.
+- Parameter: `const pthread_attr_t *restrict attr` - points to a pthread_attr_t structure whose contents are used at thread creation time to determine attributes for the new thread.
+- Parameter: `void *(*start_routine)(void *)` - routine function.
+- Parameter: `void *restrict arg)` - sole argument of routine function.
+- Return:  On success, pthread_create() returns 0; on error, it returns an error number, and the contents of *thread are undefined.
 - Prototype:
 
 ```c
-
+int pthread_create(pthread_t *restrict thread,
+                   const pthread_attr_t *restrict attr,
+                   void *(*start_routine)(void *),
+                   void *restrict arg);
 ```
 
 -  example:
 ```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 /*
-library
+Pthread_create Library
 */
-#include <>
+#include <pthread.h>
 
-int	main(void)
+void	*routine()
 {
+	printf("Hello from thread!\n");
+}
 
-	return (0);
-} 
+int	main()
+{
+	pthread_t thread;
+
+	pthread_create(&thread, NULL, routine, NULL);
+	pthread_join(thread, NULL);
+	return(0);
+}
 ```
 #### output
 ```
