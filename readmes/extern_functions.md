@@ -1,8 +1,9 @@
-# 42-formation-lvl2-9.philosophers
+### _Project 9: Philosophers - Ninth project for the formation of software engineers at school 42 São Paulo._
 
-- All examples of functions used
+🏠 [home](https://github.com/Vinicius-Santoro/42-formation-lvl2-9.philosophers) &nbsp;&nbsp;&nbsp;
 
-## Functions
+
+## Extern functions
 
 - [memset](#memset)
 - [malloc](#malloc)
