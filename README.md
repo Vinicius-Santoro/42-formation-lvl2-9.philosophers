@@ -66,7 +66,7 @@ We can use some extern functions. Follows a description of each of them.
 
 - The biggest difference is threads share memory.
 
-- Threads example: 
+#### Threads example: 
 ```c
 #include <stdlib.h>
 #include <stdio.h>
@@ -114,7 +114,7 @@ Process ID: 416
 
 <h1></h1>
 
-- Processes example: 
+#### Processes example: 
 ```c
 #include <stdlib.h>
 #include <stdio.h>
