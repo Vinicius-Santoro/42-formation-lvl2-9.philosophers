@@ -11,8 +11,8 @@
 - [write](#write)
 - [usleep](#usleep)
 - [gettimeofday](#gettimeofday)
-- [pthread_join](#pthread_join)
 - [pthread_create](#pthread_create)
+- [pthread_join](#pthread_join)
 - [pthread_detach](#pthread_detach)
 - [pthread_mutex_init](#pthread_mutex_init)
 - [pthread_mutex_lock](#pthread_mutex_lock)
@@ -361,28 +361,54 @@ Ending thread
 
 <h1></h1>
 
-#### 
-- Description: 
-- Parameter: `int fd` - file descriptor.
-- Return: 
+#### pthread_join
+- Description: waits for the thread specified by thread to terminate. 
+- Parameter: `pthread_t thread` - thread.
+- Parameter: `void **retval` - if retval is not NULL, then pthread_join() copies the exit status of the target thread (i.e., the value that the target thread supplied to pthread_exit(3)) into the location pointed to by
+retval.  If the target thread was canceled, then PTHREAD_CANCELED is placed in the location pointed to by retval.
 - Prototype:
-
 ```c
+int pthread_join(pthread_t thread, void **retval);
 
 ```
-
 -  example:
 ```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
 /*
-library
+Pthread_join Library
 */
-#include <>
+#include <pthread.h>
 
-int	main(void)
+void* roll_dice()
 {
+    int value = (rand() % 6) + 1;
+    int *result = malloc(sizeof(int));
+    *result = value;
+    printf("Thread result: %p\n", result);
+    return (void*) result;
+}
 
-	return (0);
-} 
+int main(void)
+{
+    int *res;
+    srand(time(NULL));
+    pthread_t th;
+    if (pthread_create(&th, NULL, &roll_dice, NULL) != 0)
+        return 1;
+    /*
+    retval != NULL
+        copies the exit status of the target threa into the location pointed
+        to by retval.
+    */
+    if (pthread_join(th, (void**) &res) != 0)
+        return 2;
+    printf("Main res: %p\n", res);
+    printf("Result: %d\n", *res);
+    free(res);
+    return 0;
+}
 ```
 
 
