@@ -299,7 +299,7 @@ Microseconds.................: 601024
 Seconds for Miliseconds:.....: 1663294030000
 Microseconds for Miliseconds.: 601
 Sec and Microsec for Milisec.: 1663294030601
-````
+```
 
 <h1></h1>
 
@@ -344,7 +344,7 @@ int	main()
 	int i;
 
 	for(i = 0; i < 2; i++)
-		pthread_create(thread + i, NULL, routine, NULL);
+		pthread_create(thread + i, NULL, &routine, NULL);
 	for(i = 0; i < 2; i++)
 		pthread_join(thread[i], NULL);
 
@@ -357,7 +357,7 @@ Hello from thread
 Hello from thread
 Ending thread
 Ending thread
-````
+```
 
 <h1></h1>
 
@@ -369,7 +369,6 @@ retval.  If the target thread was canceled, then PTHREAD_CANCELED is placed in t
 - Prototype:
 ```c
 int pthread_join(pthread_t thread, void **retval);
-
 ```
 -  example:
 ```c
@@ -409,6 +408,131 @@ int main(void)
     free(res);
     return 0;
 }
+```
+
+#### output
+```
+Thread result: 0x7f9860000b60
+Main res: 0x7f9860000b60
+Result: 6
+```
+
+<h1></h1>
+
+#### pthread_mutex_init 
+- Description: Creates a mutex, referenced by mutex, with attributes specified by attr. If attr is NULL, the default mutex attribute (NONRECURSIVE) is used.
+- Parameter: `pthread_mutex_t *restrict mutex` - mutex.
+- Parameter: `const pthread_mutexattr_t *restrict attr` - attribute.
+- Return: If successful, pthread_mutex_init() returns 0, and the state of the mutex becomes initialized and unlocked. If unsuccessful, pthread_mutex_init() returns -1.
+
+- Prototype:
+```c
+int pthread_mutex_init(pthread_mutex_t *restrict mutex,
+                       const pthread_mutexattr_t *restrict attr);
+```
+
+#### pthread_mutex_lock
+- Description: Locks a mutex object, which identifies a mutex. If the mutex is already locked by another thread, the thread waits for the mutex to become available. The thread that has locked a mutex becomes its current owner and remains the owner until the same thread has unlocked it. When the mutex has the attribute of recursive, the use of the lock may be different. When this kind of mutex is locked multiple times by the same thread, then a count is incremented and no waiting thread is posted. The owning thread must call pthread_mutex_unlock() the same number of times to decrement the count to zero.
+- Parameter: `pthread_mutex_t *mutex` - mutex.
+- Return: If successful, pthread_mutex_lock() returns 0. If unsuccessful, pthread_mutex_lock() returns -1.
+- Prototype:
+```c
+int pthread_mutex_lock(pthread_mutex_t *mutex);
+```
+
+#### pthread_mutex_unlock
+- Description: Releases a mutex object. If one or more threads are waiting to lock the mutex, pthread_mutex_unlock() causes one of those threads to return from pthread_mutex_lock() with the mutex object acquired. If no threads are waiting for the mutex, the mutex unlocks with no current owner. When the mutex has the attribute of recursive the use of the lock may be different. When this kind of mutex is locked multiple times by the same thread, then unlock will decrement the count and no waiting thread is posted to continue running with the lock. If the count is decremented to zero, then the mutex is released and if any thread is waiting for it is posted.
+- Parameter: `pthread_mutex_t *mutex` - mutex.
+- Return: If successful, pthread_mutex_unlock() returns 0. If unsuccessful, pthread_mutex_unlock() returns -1
+- Prototype:
+```c
+int pthread_mutex_unlock(pthread_mutex_t *mutex);
+```
+
+#### pthread_mutex_destroy
+- Description: Deletes a mutex object, which identifies a mutex. Mutexes are used to protect shared resources. mutex is set to an invalid value, but can be reinitialized using pthread_mutex_init().
+- Parameter: `pthread_mutex_t *mutex` - mutex.
+- Return: If successful, pthread_mutex_destroy() returns 0. If unsuccessful, pthread_mutex_destroy() returns -1.
+- Prototype:
+```c
+int pthread_mutex_destroy(pthread_mutex_t *mutex) 
+```
+
+-  example:
+```c
+#include <stdlib.h>
+#include <stdio.h>
+#include <pthread.h>
+
+int mails = 0;
+pthread_mutex_t mutex;
+
+void* routine()
+{
+    for (int i = 0; i < 10000000; i++)
+    {
+        pthread_mutex_lock(&mutex);
+        /*
+        Critical section
+        If mutex are not applied, it may cause a race condition where the values
+        of variables may be unpredictable and vary depending on the timings of
+        context switches of the processes or threads. 
+        */
+        mails++;
+        pthread_mutex_unlock(&mutex);
+    }
+}
+
+int main(void)
+{
+    pthread_t th[4];
+    int i;
+    pthread_mutex_init(&mutex, NULL);
+    for (i = 0; i < 4; i++)
+    {
+        if (pthread_create(th + i, NULL, &routine, NULL) != 0)
+        {
+            perror("Failed to create thread");
+            return 1;
+        }
+        printf("Thread %d has started\n", i);
+    }
+    for (i = 0; i < 4; i++)
+    {
+        if (pthread_join(th[i], NULL) != 0)
+            return 2;
+        printf("Thread %d has finished execution\n", i);
+    }
+    pthread_mutex_destroy(&mutex);
+    printf("Number of mails: %d\n", mails);
+    return 0;
+}
+```
+
+#### output with synchronization techniques (mutex)
+```
+Thread 0 has started
+Thread 1 has started
+Thread 2 has started
+Thread 3 has started
+Thread 0 has finished execution
+Thread 1 has finished execution
+Thread 2 has finished execution
+Thread 3 has finished execution
+Number of mails: 40000000
+```
+
+#### output without synchronization techniques (mutex), causing a race condition
+```
+Thread 0 has started
+Thread 1 has started
+Thread 2 has started
+Thread 3 has started
+Thread 0 has finished execution
+Thread 1 has finished execution
+Thread 2 has finished execution
+Thread 3 has finished execution
+Number of mails: 14530673
 ```
 
 

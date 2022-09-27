@@ -39,6 +39,8 @@ We can use some extern functions. Follows a description of each of them.
 - [Short introduction to threads (pthreads)](https://youtu.be/d9s_d28yJq0)
 - [Difference between processes and threads](https://youtu.be/IKG1P4rgm54)
 - [What is a mutex in C?](https://youtu.be/oq29KUy29iQ)
+- [Multithreading in C](https://www.geeksforgeeks.org/multithreading-c-2/)
+- [Mutex lock for Linux Thread Synchronization](https://www.geeksforgeeks.org/mutex-lock-for-linux-thread-synchronization/#:~:text=A%20Mutex%20is%20a%20lock,the%20locked%20region%20of%20code.)
 
 
 #### How the project works
