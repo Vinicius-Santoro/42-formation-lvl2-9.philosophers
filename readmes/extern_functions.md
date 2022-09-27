@@ -424,7 +424,6 @@ Result: 6
 - Parameter: `pthread_mutex_t *restrict mutex` - mutex.
 - Parameter: `const pthread_mutexattr_t *restrict attr` - attribute.
 - Return: If successful, pthread_mutex_init() returns 0, and the state of the mutex becomes initialized and unlocked. If unsuccessful, pthread_mutex_init() returns -1.
-
 - Prototype:
 ```c
 int pthread_mutex_init(pthread_mutex_t *restrict mutex,
@@ -534,10 +533,3 @@ Thread 2 has finished execution
 Thread 3 has finished execution
 Number of mails: 14530673
 ```
-
-
-
-
-
-
-
