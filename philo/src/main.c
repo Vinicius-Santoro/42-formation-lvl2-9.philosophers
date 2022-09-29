@@ -52,12 +52,12 @@ int	main(int argc, char **argv)
 	data->time_to_die = ft_atoi(argv[2]);
 	data->time_to_eat = ft_atoi(argv[3]);
 	data->time_to_sleep = ft_atoi(argv[4]);
-	data->dead = 0;
+	data->dead_management = 0;
 	if (argv[5] != NULL)
 		data->number_eat = ft_atoi(argv[5]);
 	else
 		data->number_eat = -1;
 	init_philosophers_list(data);
-	start_threads(data);
+	start_all_threads(data);
 	free_all(data);
 }

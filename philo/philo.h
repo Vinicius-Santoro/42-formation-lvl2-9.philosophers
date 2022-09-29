@@ -44,7 +44,7 @@ typedef struct s_data
 	long long		start_time;
 	pthread_mutex_t	printer;
 	pthread_mutex_t	death_mutex;
-	int				dead;
+	int				dead_management;
 	t_philo			*philo;
 }	t_data;
 
@@ -59,5 +59,5 @@ void		free_all(t_data *data);
 void		death_check(t_data *data);
 void		init_philosophers_list(t_data *data);
 void		death_check(t_data *data);
-void		start_threads(t_data *data);
+void		start_all_threads(t_data *data);
 #endif
