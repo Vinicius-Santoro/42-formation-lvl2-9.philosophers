@@ -57,7 +57,7 @@ void		philo_fork_lock(t_philo *philo);
 long long	get_time(void);
 void		free_all(t_data *data);
 void		death_check(t_data *data);
-void		init_philo_list(t_data *data);
+void		init_philosophers_list(t_data *data);
 void		death_check(t_data *data);
 void		start_threads(t_data *data);
 #endif

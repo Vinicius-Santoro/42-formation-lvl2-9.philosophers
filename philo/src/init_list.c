@@ -12,7 +12,7 @@
 
 #include "../philo.h"
 
-static void	add_to_list(t_philo *philo, t_data *data, int n)
+static void	add_philosophers_to_list(t_philo *philo, t_data *data, int n)
 {
 	t_philo	*new_philo;
 	t_philo	*first;
@@ -31,7 +31,7 @@ static void	add_to_list(t_philo *philo, t_data *data, int n)
 	first->prev = new_philo;
 }
 
-void	init_philo_list(t_data *data)
+void	init_philosophers_list(t_data *data)
 {
 	int	n;
 
@@ -44,5 +44,5 @@ void	init_philo_list(t_data *data)
 	data->philo->prev = data->philo;
 	n = 0;
 	while (++n < data->number_of_philosophers)
-		add_to_list(data->philo, data, n);
+		add_philosophers_to_list(data->philo, data, n);
 }
