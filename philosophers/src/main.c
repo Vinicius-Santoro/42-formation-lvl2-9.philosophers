@@ -10,3 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
+int	main(void)
+{
+	char *name = "Vinicius";
+
+	write(2, name, sizeof(*name * sizeof(char)));
+	return (0);
+} 
