@@ -15,9 +15,8 @@ HEADER		=	philosopher.h
 
 INCLUDE		=	-I ./includes
 
-CC			=	gcc -g -pthread
+CC			=	gcc -Wall -Wextra -Werror -g -pthread
 RM			=	rm -f
-CFLAGS		=	-Wall -Wextra -Werror
 
 SRC_PATH	=	./src/
 OBJ_PATH	=	./obj/
@@ -29,12 +28,12 @@ OBJ			=	$(addprefix $(OBJ_PATH),$(subst .c,.o,$(SRC_FILES)))
 
 $(OBJ_PATH)%.o:	$(SRC_PATH)%.c
 				mkdir -p $(OBJ_PATH)
-				$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+				$(CC) $(INCLUDE) -c $< -o $@
 
 all:			$(NAME)
 
 $(NAME):		$(LIBFT) $(PRINTF) $(OBJ)
-				$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+				$(CC) -o $(NAME) $(OBJ)
 				
 clean:
 				$(RM) $(OBJ)
