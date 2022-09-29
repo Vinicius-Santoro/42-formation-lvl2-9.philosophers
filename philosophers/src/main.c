@@ -10,52 +10,54 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <pthread.h>
+#include "../includes/philo.h"
 
-int mails = 0;
-pthread_mutex_t mutex;
-
-void *routine()
+int	check_arguments(char **argv)
 {
-    for (int i = 0; i < 10000000; i++)
-    {
-        pthread_mutex_lock(&mutex);
-        /*
-        Critical section
-        If mutex are not applied, it may cause a race condition where the values
-        of variables may be unpredictable and vary depending on the timings of
-        context switches of the processes or threads.
-        Comment the line 12 and 21 to see the race condition.
-        */
-        mails++;
-        pthread_mutex_unlock(&mutex);
-    }
-    return (NULL);
+	int	i;
+	int	j;
+
+	i = 0;
+	while (argv[++i] != NULL)
+	{
+		j = -1;
+		while (argv[i][++j] != '\0')
+		{
+			if (argv[i][j] < '0' || argv[i][j] > '9')
+				return (0);
+		}
+	}
+	return (1);
 }
 
-int main(void)
+int	main(int argc, char **argv)
 {
-    pthread_t th[4];
-    int i;
-    pthread_mutex_init(&mutex, NULL);
-    for (i = 0; i < 4; i++)
-    {
-        if (pthread_create(th + i, NULL, &routine, NULL) != 0)
-        {
-            perror("Failed to create thread");
-            return 1;
-        }
-        printf("Thread %d has started\n", i);
-    }
-    for (i = 0; i < 4; i++)
-    {
-        if (pthread_join(th[i], NULL) != 0)
-            return 2;
-        printf("Thread %d has finished execution\n", i);
-    }
-    pthread_mutex_destroy(&mutex);
-    printf("Number of mails: %d\n", mails);
-    return 0;
+	t_data	*data;
+
+    /*
+    Argv Validation:
+    1 - number_of_philosophers
+    2 - time_to_die
+    3 - time_to_eat
+    4 - time_to_sleep
+    5 - [number_of_times_each_philosopher_must_eat]
+    */
+	if ((argc < 5 || argc > 6) || (check_arguments(argv) == 0))
+        write(2, "Error: Invalid Arguments!", sizeof(26));
+	data = (t_data *) malloc (sizeof(t_data));
+	data->number_of_philosophers = ft_atoi(argv[1]);
+	data->time_to_die = ft_atoi(argv[2]);
+	data->time_to_eat = ft_atoi(argv[3]);
+	data->time_to_sleep = ft_atoi(argv[4]);
+	data->dead_management = 0;
+	if (argv[5] != NULL)
+		data->number_of_eat = ft_atoi(argv[5]);
+	else
+    /*
+    -1 instead of 0 because the user might type zero in the terminal. 0 == NULL.
+    */
+		data->number_of_eat = -1;
+	init_philo_list(data);
+	start_threads(data);
+	free_all(data);
 }
