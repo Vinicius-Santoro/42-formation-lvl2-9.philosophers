@@ -27,7 +27,6 @@ We can use some extern functions. Follows a description of each of them.
 - [gettimeofday](readmes/extern_functions.md)
 - [pthread_create](readmes/extern_functions.md)
 - [pthread_join](readmes/extern_functions.md)
-- [pthread_detach](readmes/extern_functions.md)
 - [pthread_mutex_init](readmes/extern_functions.md)
 - [pthread_mutex_lock](readmes/extern_functions.md)
 - [pthread_mutex_unlock](readmes/extern_functions.md)
