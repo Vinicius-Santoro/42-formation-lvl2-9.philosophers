@@ -25,7 +25,7 @@ typedef struct s_data	t_data;
 typedef struct s_philo
 {
 	int				id;
-	long long		last_eat_time;
+	long long		last_time_to_eat;
 	int				eat_count;
 	pthread_t		thread;
 	pthread_mutex_t	fork;
@@ -36,15 +36,15 @@ typedef struct s_philo
 
 typedef struct s_data
 {
-	int				philo_num;
-	int				die_time;
-	int				eat_time;
-	int				sleep_time;
-	int				eat_num;
+	int				number_of_philosophers;
+	int				time_to_die;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				number_eat;
 	long long		start_time;
 	pthread_mutex_t	printer;
 	pthread_mutex_t	death_mutex;
-	int				dead;
+	int				dead_management;
 	t_philo			*philo;
 }	t_data;
 
@@ -57,7 +57,7 @@ void		philo_fork_lock(t_philo *philo);
 long long	get_time(void);
 void		free_all(t_data *data);
 void		death_check(t_data *data);
-void		init_philo_list(t_data *data);
+void		init_philosophers_list(t_data *data);
 void		death_check(t_data *data);
-void		start_threads(t_data *data);
+void		start_all_threads(t_data *data);
 #endif

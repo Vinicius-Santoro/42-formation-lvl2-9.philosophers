@@ -12,13 +12,13 @@
 
 #include "../philo.h"
 
-static void	*philo_func(t_philo *philo)
+static void	*philosophers_management(t_philo *philo)
 {
-	philo->last_eat_time = get_time();
+	philo->last_time_to_eat = get_time();
 	if (philo->id % 2 == 0)
-		usleep((philo->data->eat_time - 10) * 1000);
-	while (philo->data->dead == 0 && (philo->eat_count < philo->data->eat_num \
-			|| philo->data->eat_num == -1))
+		usleep((philo->data->time_to_eat - 10) * 1000);
+	while (philo->data->dead_management == 0 && (philo->eat_count < philo->data->number_eat \
+			|| philo->data->number_eat == -1))
 	{
 		philo_fork_lock(philo);
 		philo_eat(philo);
@@ -29,24 +29,25 @@ static void	*philo_func(t_philo *philo)
 	return (NULL);
 }
 
-void	start_threads(t_data *data)
+void	start_all_threads(t_data *data)
 {
 	int		n;
 	t_philo	*temp;
 
-	n = data->philo_num;
+	n = data->number_of_philosophers;
 	temp = data->philo;
 	pthread_mutex_init(&data->printer, NULL);
 	pthread_mutex_init(&data->death_mutex, NULL);
 	data->start_time = get_time();
 	while (n > 0)
 	{
-		pthread_create(&temp->thread, NULL, (void *)&philo_func, temp);
+		pthread_create(&temp->thread, NULL, (void *)&philosophers_management, \
+		 temp);
 		temp = temp->next;
 		n--;
 	}
 	death_check(data);
-	n = data->philo_num;
+	n = data->number_of_philosophers;
 	while (n > 0)
 	{
 		pthread_join(temp->thread, NULL);

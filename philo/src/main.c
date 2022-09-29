@@ -12,7 +12,7 @@
 
 #include "../philo.h"
 
-int	check_args(char **argv)
+int	check_arguments(char **argv)
 {
 	int	i;
 	int	j;
@@ -42,22 +42,22 @@ int	main(int argc, char **argv)
 {
 	t_data	*data;
 
-	if (argc < 5 || argc > 6 || check_args(argv) == 0)
+	if (argc < 5 || argc > 6 || check_arguments(argv) == 0)
 	{
-		printf ("Incorrect number of arguments\n");
+		printf ("Error: Invalid Arguments!\n");
 		exit (1);
 	}
 	data = (t_data *) malloc (sizeof(t_data));
-	data->philo_num = ft_atoi(argv[1]);
-	data->die_time = ft_atoi(argv[2]);
-	data->eat_time = ft_atoi(argv[3]);
-	data->sleep_time = ft_atoi(argv[4]);
-	data->dead = 0;
+	data->number_of_philosophers = ft_atoi(argv[1]);
+	data->time_to_die = ft_atoi(argv[2]);
+	data->time_to_eat = ft_atoi(argv[3]);
+	data->time_to_sleep = ft_atoi(argv[4]);
+	data->dead_management = 0;
 	if (argv[5] != NULL)
-		data->eat_num = ft_atoi(argv[5]);
+		data->number_eat = ft_atoi(argv[5]);
 	else
-		data->eat_num = -1;
-	init_philo_list(data);
-	start_threads(data);
+		data->number_eat = -1;
+	init_philosophers_list(data);
+	start_all_threads(data);
 	free_all(data);
 }
