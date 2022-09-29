@@ -29,7 +29,7 @@ static void	add_to_linked_list(t_philo *philosopher, t_data *data, int i)
 	new_philosopher = (t_philo *) malloc (sizeof(t_philo));
 	pthread_mutex_init(&new_philosopher->fork, NULL);
 	new_philosopher->identification = i + 1;
-	new_philosopher->umber_of_eat = 0;
+	new_philosopher->number_of_eat = 0;
 	while (philosopher->next != head)
 		philosopher = philosopher->next;
 	philosopher->next = new_philosopher;
@@ -50,6 +50,7 @@ void	init_philo_list(t_data *data)
 	data->philosophers = (t_philosophers *) malloc (sizeof(t_philosophers));
 	/*
     Initializing a mutex.
+    Fork: flag that determines the lock and unlock.
     */
     pthread_mutex_init(&data->philosophers->fork, NULL);
 	data->philosophers->identification = 1;
