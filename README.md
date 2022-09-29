@@ -15,7 +15,6 @@ Some necessary concepts to develop this project.
 - [What are processes?](#processes)
 - [Difference between processes and threads](#threads_x_processes)
 
-
 #### Extern functions
 
 We can use some extern functions. Follows a description of each of them.
@@ -45,6 +44,7 @@ We can use some extern functions. Follows a description of each of them.
 
 #### How the project works
 
+- [Dining philosophers problem](#philosophers)
 
 ## Necessary concepts
 
@@ -149,3 +149,6 @@ Process ID: 467
 ````
 
 ## How the project works
+
+#### Philosophers
+
