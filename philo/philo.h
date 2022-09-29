@@ -25,7 +25,7 @@ typedef struct s_data	t_data;
 typedef struct s_philo
 {
 	int				id;
-	long long		last_eat_time;
+	long long		last_time_to_eat;
 	int				eat_count;
 	pthread_t		thread;
 	pthread_mutex_t	fork;
@@ -36,11 +36,11 @@ typedef struct s_philo
 
 typedef struct s_data
 {
-	int				philo_num;
-	int				die_time;
-	int				eat_time;
-	int				sleep_time;
-	int				eat_num;
+	int				number_of_philosophers;
+	int				time_to_die;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				number_eat;
 	long long		start_time;
 	pthread_mutex_t	printer;
 	pthread_mutex_t	death_mutex;

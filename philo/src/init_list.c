@@ -43,6 +43,6 @@ void	init_philo_list(t_data *data)
 	data->philo->next = data->philo;
 	data->philo->prev = data->philo;
 	n = 0;
-	while (++n < data->philo_num)
+	while (++n < data->number_of_philosophers)
 		add_to_list(data->philo, data, n);
 }

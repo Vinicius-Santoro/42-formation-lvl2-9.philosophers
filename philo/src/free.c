@@ -14,18 +14,18 @@
 
 void	free_all(t_data *data)
 {
-	if (data->philo_num == 1)
+	if (data->number_of_philosophers == 1)
 	{
 		free(data->philo);
 		free (data);
 	}
 	else
 	{
-		while (data->philo_num > 1)
+		while (data->number_of_philosophers > 1)
 		{
 			data->philo = data->philo->next;
 			free (data->philo->prev);
-			data->philo_num--;
+			data->number_of_philosophers--;
 		}
 		free(data->philo);
 		free(data);

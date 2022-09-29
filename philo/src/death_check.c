@@ -17,12 +17,12 @@ static int	eat_count_check(t_data *data)
 	t_philo	*philo;
 
 	philo = data->philo;
-	if (philo->eat_count != data->eat_num)
+	if (philo->eat_count != data->number_eat)
 		return (0);
 	philo = philo->next;
 	while (philo != data->philo)
 	{
-		if (philo->eat_count != data->eat_num)
+		if (philo->eat_count != data->number_eat)
 			return (0);
 		philo = philo->next;
 	}
@@ -34,14 +34,14 @@ void	death_check(t_data *data)
 {
 	t_philo	*philo;
 
-	usleep ((data->die_time * 1000) - 10);
+	usleep ((data->time_to_die * 1000) - 10);
 	philo = data->philo;
 	while (data->dead == 0)
 	{
 		if (eat_count_check(data))
 			break ;
 		pthread_mutex_lock(&data->death_mutex);
-		if (get_time() - philo->last_eat_time > data->die_time)
+		if (get_time() - philo->last_time_to_eat > data->time_to_die)
 		{
 			printf ("%lli %i died\n", get_time() - data->start_time, philo->id);
 			data->dead = 1;

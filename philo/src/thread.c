@@ -14,11 +14,11 @@
 
 static void	*philo_func(t_philo *philo)
 {
-	philo->last_eat_time = get_time();
+	philo->last_time_to_eat = get_time();
 	if (philo->id % 2 == 0)
-		usleep((philo->data->eat_time - 10) * 1000);
-	while (philo->data->dead == 0 && (philo->eat_count < philo->data->eat_num \
-			|| philo->data->eat_num == -1))
+		usleep((philo->data->time_to_eat - 10) * 1000);
+	while (philo->data->dead == 0 && (philo->eat_count < philo->data->number_eat \
+			|| philo->data->number_eat == -1))
 	{
 		philo_fork_lock(philo);
 		philo_eat(philo);
@@ -34,7 +34,7 @@ void	start_threads(t_data *data)
 	int		n;
 	t_philo	*temp;
 
-	n = data->philo_num;
+	n = data->number_of_philosophers;
 	temp = data->philo;
 	pthread_mutex_init(&data->printer, NULL);
 	pthread_mutex_init(&data->death_mutex, NULL);
@@ -46,7 +46,7 @@ void	start_threads(t_data *data)
 		n--;
 	}
 	death_check(data);
-	n = data->philo_num;
+	n = data->number_of_philosophers;
 	while (n > 0)
 	{
 		pthread_join(temp->thread, NULL);
