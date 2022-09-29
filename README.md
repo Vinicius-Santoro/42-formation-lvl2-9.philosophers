@@ -42,6 +42,7 @@ We can use some extern functions. Follows a description of each of them.
 - [Mutex lock for Linux Thread Synchronization](https://www.geeksforgeeks.org/mutex-lock-for-linux-thread-synchronization/#:~:text=A%20Mutex%20is%20a%20lock,the%20locked%20region%20of%20code.)
 - [Dining Philosopher Problem - Simplified](https://youtu.be/VSkvwzqo-Pk)
 - [Dining Philosopher Problem Using Semaphores](https://www.geeksforgeeks.org/dining-philosopher-problem-using-semaphores/)
+- [Dining Philosophers Problem with Solution](https://youtu.be/NbwbQQB7xNQ)
 
 
 #### How the project works
