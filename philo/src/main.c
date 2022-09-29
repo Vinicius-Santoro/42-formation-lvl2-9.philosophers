@@ -42,14 +42,9 @@ int	main(int argc, char **argv)
 {
 	t_data	*data;
 
-	if (argc < 5 || argc > 6)
+	if (argc < 5 || argc > 6 || check_args(argv) == 0)
 	{
 		printf ("Incorrect number of arguments\n");
-		exit (1);
-	}
-	else if (check_args(argv) == 0)
-	{
-		printf("Arguments are formatted incorrectly\n");
 		exit (1);
 	}
 	data = (t_data *) malloc (sizeof(t_data));
