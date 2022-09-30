@@ -12,11 +12,17 @@
 
 #include "../includes/philo.h"
 
-static void	*philosophers_management(t_philo *philo)
+static void *philosophers_management_core(t_philo *philo)
 {
 	philo->last_time_to_eat = get_time();
 	if (philo->id % 2 == 0)
 		usleep((philo->data->time_to_eat - 10) * 1000);
+	return (NULL);
+}
+
+static void	*philosophers_management(t_philo *philo)
+{
+	philosophers_management_core(philo);
 	while (philo->data->dead_management == 0 && (philo->eat_count < philo->data->number_eat \
 			|| philo->data->number_eat == -1))
 	{
