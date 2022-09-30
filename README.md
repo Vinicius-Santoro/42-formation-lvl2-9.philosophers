@@ -9,11 +9,11 @@ Project 9: Philosophers - Ninth project for the formation of software engineers 
 
 Some necessary concepts to develop this project.
 
-- [What is the processor?](#processor)
-- [What is the core?](#core)
-- [What are threads?](#threads)
-- [What are processes?](#processes)
-- [Difference between processes and threads](#threads_x_processes)
+- [What is the processor?](readmes/necessary_concepts.md)
+- [What is the core?](readmes/necessary_concepts.md)
+- [What are threads?](readmes/necessary_concepts.md)
+- [What are processes?](readmes/necessary_concepts.md)
+- [Difference between processes and threads](readmes/necessary_concepts.md)
 
 #### Extern functions
 
@@ -45,9 +45,9 @@ We can use some extern functions. Follows a description of each of them.
 
 #### How the project works
 
-- [Dining philosophers problem](#philosophers)
-- [How to test it](#philosophers)
-- [Arguments](#arguments)
+- [Dining philosophers problem](readmes/how_the_project_works.md)
+- [How to test it](readmes/how_the_project_works.md)
+- [Arguments](readmes/how_the_project_works.md)
 
 #### Project documentation
 - [main.c](readmes/main.md)
