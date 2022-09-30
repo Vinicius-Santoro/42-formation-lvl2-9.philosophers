@@ -158,29 +158,27 @@ Process ID: 467
 
 #### How to test it
 
-Clone the project
+- Clone the project
 ```
 git clone git@github.com:Vinicius-Santoro/42-formation-lvl2-9.philosophers.git
 ```
 
-Access the folder
+- Access the folder
 ```
 cd philo
 ```
 
-Run make so you can build the program
+- Run make so you can build the program
 ```
 make all
 ```
 
-Run the program with the example arguments
+- Run the program with the example arguments
 ```
 ./philo 5 400 100 100 5
 ```
 
 #### Arguments
-All arguments working with mandatory and bonus
-
 <table>
     <thead>
         <tr>
