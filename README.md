@@ -49,6 +49,7 @@ We can use some extern functions. Follows a description of each of them.
 - [Dining philosophers problem](#philosophers)
 - [How to test it](#philosophers)
 - [Arguments](#arguments)
+- [Documentation of all functions]()
 
 ## Necessary concepts
 
