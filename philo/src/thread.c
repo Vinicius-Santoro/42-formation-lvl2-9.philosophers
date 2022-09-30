@@ -20,6 +20,7 @@ static void	*philosophers_management(t_philo *philo)
 	while (philo->data->dead_management == 0 && (philo->eat_count < philo->data->number_eat \
 			|| philo->data->number_eat == -1))
 	{
+		/* It's making the philosophers eat, sleep, think and lock/unlock the forks. */
 		philo_fork_lock(philo);
 		philo_eat(philo);
 		philo_fork_unlock(philo);
