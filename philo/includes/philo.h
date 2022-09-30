@@ -48,7 +48,7 @@ typedef struct s_data
 	t_philo			*philo;
 }	t_data;
 
-int	   		ft_isdigit(int c);
+int			ft_isdigit(int c);
 int			ft_atoi(const char *nptr);
 void		philo_think(t_philo *philo);
 void		philo_sleep(t_philo *philo);

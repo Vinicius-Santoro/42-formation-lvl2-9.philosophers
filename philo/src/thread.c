@@ -12,7 +12,7 @@
 
 #include "../includes/philo.h"
 
-static void *philosophers_management_core(t_philo *philo)
+static void	*philosophers_management_core(t_philo *philo)
 {
 	philo->last_time_to_eat = get_time();
 	if (philo->id % 2 == 0)
@@ -23,8 +23,8 @@ static void *philosophers_management_core(t_philo *philo)
 static void	*philosophers_management(t_philo *philo)
 {
 	philosophers_management_core(philo);
-	while (philo->data->dead_management == 0 && (philo->eat_count < philo->data->number_eat \
-			|| philo->data->number_eat == -1))
+	while (philo->data->dead_management == 0 && (philo->eat_count < \
+		philo->data->number_eat || philo->data->number_eat == -1))
 	{
 		philo_fork_lock(philo);
 		philo_eat(philo);
@@ -48,7 +48,7 @@ void	start_all_threads(t_data *data)
 	while (n > 0)
 	{
 		pthread_create(&temp->thread, NULL, (void *)&philosophers_management, \
-		 temp);
+			temp);
 		temp = temp->next;
 		n--;
 	}
