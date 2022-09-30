@@ -47,6 +47,8 @@ We can use some extern functions. Follows a description of each of them.
 #### How the project works
 
 - [Dining philosophers problem](#philosophers)
+- [How to test it](#test)
+- [Arguments](#arguments)
 
 ## Necessary concepts
 
@@ -156,7 +158,7 @@ Process ID: 467
 
 - The problem consists of five philosophers sitting around a circular dinner table, where each philosopher has a plate for eating spaghetti and a fork to his right. To eat they need 2 forks but there is only one fork between each pair of plates. A philosopher has three actions: eating, thinking, or sleeping. When a philosopher gets hungry he will try to take the fork to his right and to his left, one at a time. If he manages to get both forks, he will eat the food at a certain time and will put the forks on the table, going to sleep and then going to think again.
 
-#### How to test it
+#### Test
 
 - Clone the project
 ```
