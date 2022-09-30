@@ -156,6 +156,28 @@ Process ID: 467
 
 - The problem consists of five philosophers sitting around a circular dinner table, where each philosopher has a plate for eating spaghetti and a fork to his right. To eat they need 2 forks but there is only one fork between each pair of plates. A philosopher has three actions: eating, thinking, or sleeping. When a philosopher gets hungry he will try to take the fork to his right and to his left, one at a time. If he manages to get both forks, he will eat the food at a certain time and will put the forks on the table, going to sleep and then going to think again.
 
+#### How to test it
+
+Clone the project
+```
+git clone git@github.com:Vinicius-Santoro/42-formation-lvl2-9.philosophers.git
+```
+
+Access the folder
+```
+cd philo
+```
+
+Run make so you can build the program
+```
+make all
+```
+
+Run the program with the example arguments
+```
+./philo 5 400 100 100 5
+```
+
 #### Arguments
 All arguments working with mandatory and bonus
 
