@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../philo.h"
+#include "../includes/philo.h"
 
 static void	add_philosophers_to_list(t_philo *philo, t_data *data, int n)
 {

@@ -10,29 +10,43 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC_FILES= main.c ft_atoi.c philo_actions.c free.c death_check.c thread.c init_list.c
-SRC=$(addprefix src/, $(SRC_FILES))
-OBJ=$(addprefix obj/, $(SRC_FILES:.c=.o))
-OBJ_DIR=obj
-NAME=philo
+NAME	=	philo
+HEADER	=	philo.h
 
-all: $(NAME)
+INCLUDE        =    -I ./includes
 
-$(NAME): $(OBJ_DIR) $(OBJ)
-	gcc -Wall -Werror -Wextra -g -pthread $(OBJ) -o $(NAME)
+CC            =    gcc -Wall -Wextra -Werror -g -pthread
+RM            =    rm -f
 
-obj/%.o: src/%.c
-	gcc -Wall -Werror -Wextra -c $< -o $@
+SRC_PATH    =    ./src/
+OBJ_PATH    =    ./obj/
 
-$(OBJ_DIR):
-	mkdir $(OBJ_DIR)
+SRC_FILES    =	main.c \
+				free.c \
+				thread.c \
+				ft_atoi.c \
+				init_list.c \
+				death_check.c \
+				philo_actions.c 
 
+SRC            =    $(addprefix $(SRC_PATH),$(SRC_FILES))
+OBJ            =    $(addprefix $(OBJ_PATH),$(subst .c,.o,$(SRC_FILES)))
+
+$(OBJ_PATH)%.o:	$(SRC_PATH)%.c
+				mkdir -p $(OBJ_PATH)
+				$(CC) $(INCLUDE) -c $< -o $@
+
+all:            $(NAME)
+
+$(NAME):        $(LIBFT) $(PRINTF) $(OBJ)
+				$(CC) -o $(NAME) $(OBJ)
+		
 clean:
-	rm -rf $(OBJ)
+				$(RM) $(OBJ)
 
-fclean: clean
-	rm -rf $(NAME)
+fclean:            clean
+				$(RM) $(NAME) rm -rf $(OBJ_PATH)
 
-re: fclean all
+re:				fclean all
 
-.PHONY: all clean fclean re
+.PHONY:			all, clean, fclean, re
