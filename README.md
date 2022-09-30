@@ -48,7 +48,7 @@ We can use some extern functions. Follows a description of each of them.
 
 - [Dining philosophers problem](#philosophers)
 - [How to test it](#philosophers)
-- [Arguments](#philosophers)
+- [Arguments](#arguments)
 
 ## Necessary concepts
 
