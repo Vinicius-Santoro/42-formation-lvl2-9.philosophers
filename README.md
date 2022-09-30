@@ -43,13 +43,19 @@ We can use some extern functions. Follows a description of each of them.
 - [Dining Philosopher Problem Using Semaphores](https://www.geeksforgeeks.org/dining-philosopher-problem-using-semaphores/)
 - [Dining Philosophers Problem with Solution](https://youtu.be/NbwbQQB7xNQ)
 
-
 #### How the project works
 
 - [Dining philosophers problem](#philosophers)
 - [How to test it](#philosophers)
 - [Arguments](#arguments)
-- [Documentation of all functions]()
+
+#### Project documentation
+- [main.c](readmes/main.md)
+- [main.c](readmes/main.md)
+- [main.c](readmes/main.md)
+- [main.c](readmes/main.md)
+- [main.c](readmes/main.md)
+
 
 ## Necessary concepts
 
