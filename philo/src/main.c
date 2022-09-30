@@ -23,7 +23,7 @@ int	check_arguments(char **argv)
 		j = -1;
 		while (argv[i][++j] != '\0')
 		{
-			if (argv[i][j] < '0' || argv[i][j] > '9')
+			if (!ft_isdigit(argv[i][j]))
 				return (0);
 		}
 	}
