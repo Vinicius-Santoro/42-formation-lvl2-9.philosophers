@@ -193,10 +193,10 @@ make all
         </tr>
         <tr>
             <td align="center">5</td>
-            <td align="center">800</td>
-            <td align="center">200</td>
-            <td align="center">200</td>
-            <td align="center">10</td>
+            <td align="center">400</td>
+            <td align="center">100</td>
+            <td align="center">100</td>
+            <td align="center">5</td>
         </tr>
         <tr>
             <td align="center"><strong>number_of_philosophers</strong></strong></td>
