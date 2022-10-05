@@ -53,6 +53,7 @@ int	main(int argc, char **argv)
 	data->time_to_eat = ft_atoi(argv[3]);
 	data->time_to_sleep = ft_atoi(argv[4]);
 	data->dead_management = 0;
+	data->stop = 0;
 	if (argv[5] != NULL)
 		data->number_eat = ft_atoi(argv[5]);
 	else

@@ -24,7 +24,7 @@ void	philo_fork_lock(t_philo *philo)
 		pthread_mutex_unlock(&philo->data->printer);
 		if (philo->data->number_of_philosophers == 1)
 		{
-			usleep(philo->data->time_to_die * 1000);
+			usleep((philo->data->time_to_die * 1000) + 1000);
 			return ;
 		}
 		pthread_mutex_lock(&philo->prev->fork);
