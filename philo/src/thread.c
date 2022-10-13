@@ -12,7 +12,7 @@
 
 #include "../includes/philo.h"
 
-static void	*philo_func(t_philo *philo)
+static void	*philo_routine(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->data->time_to_eat_mutex);
 	philo->last_time_to_eat = get_time();
@@ -47,7 +47,7 @@ void	start_threads(t_data *data)
 	data->start_time = get_time();
 	while (n > 0)
 	{
-		pthread_create(&temp->thread, NULL, (void *)&philo_func, temp);
+		pthread_create(&temp->thread, NULL, (void *)&philo_routine, temp);
 		temp = temp->next;
 		n--;
 	}
