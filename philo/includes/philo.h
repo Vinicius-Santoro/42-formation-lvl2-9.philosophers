@@ -19,13 +19,29 @@
 # include <stdio.h>
 # include <sys/time.h>
 
+#define GREEN "\033[0;32m"
+#define BLUE "\033[0;34m"
+#define RED "\033[0;31m"
+#define RE "\033[0m"
+#define INVALID_ARGV GREEN "\
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓\n\
+┃" RED "ERROR:" RE " " GREEN "You must specify at least 4 or 5 arguments┃  Rules ┃\n\
+┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃━━━━━━━━┃\n\
+┃ - [1] number_of_philosophers                    ┃  >  0  ┃\n\
+┃ - [2] time_to_die                               ┃  >= 0  ┃\n\
+┃ - [3] time_to_eat                               ┃  >= 0  ┃\n\
+┃ - [4] time_to_sleep                             ┃  >= 0  ┃\n\
+┃ - [5] number_of_times_each_philosopher_must_eat ┃  >= 0  ┃\n\
+┃ - Obs: Argument 5 is optional.                  ┃   --   ┃\n\
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┛\n" RE
+
 typedef struct s_philo	t_philo;
 typedef struct s_data	t_data;
 
 typedef struct s_philo
 {
 	int				id;
-	long long		last_eat_time;
+	long long		last_time_to_eat;
 	int				eat_count;
 	pthread_t		thread;
 	pthread_mutex_t	fork;
@@ -36,20 +52,21 @@ typedef struct s_philo
 
 typedef struct s_data
 {
-	int				philo_num;
-	int				die_time;
-	int				eat_time;
-	int				sleep_time;
-	int				eat_num;
+	int				number_of_philosophers;
+	int				time_to_die;
+	int				time_to_eat;
+	int				time_to_sleep;
+	int				number_of_eat;
 	long long		start_time;
-	pthread_mutex_t	printer;
+	pthread_mutex_t	printer_mutex;
 	pthread_mutex_t	stop_mutex;
 	pthread_mutex_t	eat_mutex;
-	pthread_mutex_t	eat_time_mutex;
+	pthread_mutex_t	time_to_eat_mutex;
 	int				stop;
 	t_philo			*philo;
 }	t_data;
 
+int 		ft_isdigit(int c);
 int			ft_atoi(const char *nptr);
 void		philo_think(t_philo *philo);
 void		philo_sleep(t_philo *philo);

@@ -6,7 +6,7 @@
 /*   By: vnazioze <vnazioze@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 13:03:02 by vnazioze          #+#    #+#             */
-/*   Updated: 2022/10/13 13:05:19 by vnazioze         ###   ########.fr       */
+/*   Updated: 2022/10/13 13:13:24 by vnazioze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_stop(t_data *data)
 int	check_eat_mutex(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->data->eat_mutex);
-	if (philo->eat_count != philo->data->eat_num)
+	if (philo->eat_count != philo->data->number_of_eat)
 	{
 		pthread_mutex_unlock(&philo->data->eat_mutex);
 		return (1);

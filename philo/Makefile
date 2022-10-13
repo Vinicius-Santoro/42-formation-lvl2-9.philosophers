@@ -26,7 +26,7 @@ SRC_PATH    	=    ./src/
 OBJ_PATH    	=    ./obj/
 
 SRC_FILES    	=	main.c \
-					ft_atoi.c \
+					utils.c \
 					philo_actions.c\
 					free.c \
 					death_check.c \
