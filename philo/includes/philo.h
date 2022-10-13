@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vnazioze <vnazioze@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 20:21:04 by vnazioze          #+#    #+#             */
-/*   Updated: 2022/09/29 20:21:04 by vnazioze         ###   ########.fr       */
+/*   Created: 2022/10/13 13:04:33 by vnazioze          #+#    #+#             */
+/*   Updated: 2022/10/13 13:04:33 by vnazioze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_data	t_data;
 typedef struct s_philo
 {
 	int				id;
-	long long		last_time_to_eat;
+	long long		last_eat_time;
 	int				eat_count;
 	pthread_t		thread;
 	pthread_mutex_t	fork;
@@ -36,21 +36,20 @@ typedef struct s_philo
 
 typedef struct s_data
 {
-	int				number_of_philosophers;
-	int				time_to_die;
-	int				time_to_eat;
-	int				time_to_sleep;
-	int				number_eat;
+	int				philo_num;
+	int				die_time;
+	int				eat_time;
+	int				sleep_time;
+	int				eat_num;
 	long long		start_time;
 	pthread_mutex_t	printer;
-	pthread_mutex_t	death_mutex;
 	pthread_mutex_t	stop_mutex;
+	pthread_mutex_t	eat_mutex;
+	pthread_mutex_t	eat_time_mutex;
 	int				stop;
-	int				dead_management;
 	t_philo			*philo;
 }	t_data;
 
-int			ft_isdigit(int c);
 int			ft_atoi(const char *nptr);
 void		philo_think(t_philo *philo);
 void		philo_sleep(t_philo *philo);
@@ -60,7 +59,11 @@ void		philo_fork_lock(t_philo *philo);
 long long	get_time(void);
 void		free_all(t_data *data);
 void		death_check(t_data *data);
-void		init_philosophers_list(t_data *data);
+void		init_philo_list(t_data *data);
 void		death_check(t_data *data);
-void		start_all_threads(t_data *data);
+void		start_threads(t_data *data);
+int			check_stop(t_data *data);
+int			eat_count_check(t_data *data);
+int			check_eat_mutex(t_philo *philo);
+
 #endif
