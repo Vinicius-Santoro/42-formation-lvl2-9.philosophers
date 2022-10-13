@@ -12,7 +12,7 @@
 
 #include "../includes/philo.h"
 
-int	check_arguments(char **argv)
+static int	check_arguments(char **argv)
 {
 	int	i;
 	int	j;
@@ -44,6 +44,7 @@ int	main(int argc, char **argv)
 	data->time_to_die = ft_atoi(argv[2]);
 	data->time_to_eat = ft_atoi(argv[3]);
 	data->time_to_sleep = ft_atoi(argv[4]);
+	data->stop = 0;
 	if (argv[5] != NULL)
 		data->number_of_eat = ft_atoi(argv[5]);
 	else
