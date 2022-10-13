@@ -48,7 +48,7 @@ $(NAME):        $(OBJ)
 				@echo "$(NAME): $(GREEN)$(NAME) was created$(RESET)"
 		
 clean:
-				$(RM) $(OBJ)
+				$(RM) rm -rf $(OBJ_PATH)
 				@echo "$(NAME): $(RED)object files were deleted$(RESET)"
 
 fclean:            clean
