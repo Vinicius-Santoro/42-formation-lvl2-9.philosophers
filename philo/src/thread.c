@@ -33,12 +33,6 @@ static void	*philo_routine(t_philo *philo)
 	return (NULL);
 }
 
-/**
- * It creates the threads and then waits for them to finish
- * 
- * @param data a struct that contains all the information about the philosophers
- * and the simulation
- */
 void	start_threads(t_data *data)
 {
 	int		n;
