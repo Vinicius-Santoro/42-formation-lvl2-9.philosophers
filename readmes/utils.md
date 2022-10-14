@@ -3,10 +3,21 @@
 🏠 [home](https://github.com/Vinicius-Santoro/42-formation-lvl2-9.philosophers) &nbsp;&nbsp;&nbsp;
 
 ```c
-#include "../includes/philo.h"
+/**
+ * It returns the current time in milliseconds.
+ * 
+ * @return The time in milliseconds.
+ */
+long long	get_time(void)
+{
+	struct timeval	t;
+
+	gettimeofday(&t, NULL);
+	return ((t.tv_sec * 1000) + (t.tv_usec / 1000));
+}
 
 /**
- * If the character is a digit, return 1, otherwise return 0
+ * It checks if the character is a digit.
  * 
  * @param c The character to be checked.
  * 
@@ -22,7 +33,7 @@ int	ft_isdigit(int c)
 /**
  * It converts a string to an integer.
  * 
- * @param string The string to be converted.
+ * @param string This is the string that we are going to convert to an integer.
  * 
  * @return the integer value of the string.
  */
@@ -44,7 +55,6 @@ int	ft_atoi(const char *string)
 	}
 	while (ft_isdigit(*string))
 	{
-		/* Converting the string to an integer. */
 		final_return = (final_return * 10) + (*string - '0');
 		string++;
 	}

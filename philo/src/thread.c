@@ -19,8 +19,8 @@ static void	*philo_routine(t_philo *philo)
 	pthread_mutex_unlock(&philo->data->time_to_eat_mutex);
 	if (philo->id % 2 == 0)
 		usleep((philo->data->time_to_eat - 10) * 1000);
-	while (check_stop(philo->data) && (philo->eat_count < philo->data->number_of_eat \
-			|| philo->data->number_of_eat == -1))
+	while (check_stop(philo->data) && (philo->eat_count \
+	< philo->data->number_of_eat || philo->data->number_of_eat == -1))
 	{
 		philo_fork_lock(philo);
 		if (check_stop(philo->data) == 0)
@@ -33,6 +33,12 @@ static void	*philo_routine(t_philo *philo)
 	return (NULL);
 }
 
+/**
+ * It creates the threads and then waits for them to finish
+ * 
+ * @param data a struct that contains all the information about the philosophers
+ * and the simulation
+ */
 void	start_threads(t_data *data)
 {
 	int		n;

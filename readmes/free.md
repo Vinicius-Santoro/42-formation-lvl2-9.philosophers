@@ -3,8 +3,6 @@
 🏠 [home](https://github.com/Vinicius-Santoro/42-formation-lvl2-9.philosophers) &nbsp;&nbsp;&nbsp;
 
 ```c
-#include "../includes/philo.h"
-
 /**
  * It frees the data structure and the linked list of philosophers
  * 

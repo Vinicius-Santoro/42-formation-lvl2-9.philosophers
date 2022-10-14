@@ -19,13 +19,9 @@
 # include <stdio.h>
 # include <sys/time.h>
 
-#define GREEN "\033[0;32m"
-#define BLUE "\033[0;34m"
-#define RED "\033[0;31m"
-#define RE "\033[0m"
-#define INVALID_ARGV GREEN "\
+# define INVALID_ARGV "\
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓\n\
-┃" RED "ERROR:" RE " " GREEN "You must specify at least 4 or 5 arguments┃  Rules ┃\n\
+┃ ERROR:You must specify at least 4 or 5 arguments┃  Rules ┃\n\
 ┃━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┃━━━━━━━━┃\n\
 ┃ - [1] number_of_philosophers                    ┃  >  0  ┃\n\
 ┃ - [2] time_to_die                               ┃  >= 0  ┃\n\
@@ -33,7 +29,7 @@
 ┃ - [4] time_to_sleep                             ┃  >= 0  ┃\n\
 ┃ - [5] number_of_times_each_philosopher_must_eat ┃  >= 0  ┃\n\
 ┃ - Obs: Argument 5 is optional.                  ┃   --   ┃\n\
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┛\n" RE
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┛\n"
 
 typedef struct s_philo	t_philo;
 typedef struct s_data	t_data;
@@ -66,7 +62,7 @@ typedef struct s_data
 	t_philo			*philo;
 }	t_data;
 
-int 		ft_isdigit(int c);
+int			ft_isdigit(int c);
 int			ft_atoi(const char *nptr);
 void		philo_think(t_philo *philo);
 void		philo_sleep(t_philo *philo);
