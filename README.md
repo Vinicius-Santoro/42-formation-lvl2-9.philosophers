@@ -51,9 +51,10 @@ We can use some extern functions. Follows a description of each of them.
 
 #### Project documentation
 - [main.c](readmes/main.md)
-- [ft_atoi.c](readmes/ft_atoi.md)
+- [utils.c](readmes/utils.md)
 - [init_list.c](readmes/init_list.md)
 - [thread.c](readmes/thread.md)
 - [philo_actions.c](readmes/philo_actions.md)
+- [mutex_check.c](readmes/thread.md)
 - [death_check.c](readmes/death_check.md)
 - [free.c](readmes/free.md)
