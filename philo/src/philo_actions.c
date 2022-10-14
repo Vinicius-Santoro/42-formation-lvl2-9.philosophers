@@ -38,22 +38,12 @@ void	philo_fork_lock(t_philo *philo)
 	}
 }
 
-/**
- * Unlock the forks
- * 
- * @param philo the philosopher
- */
 void	philo_fork_unlock(t_philo *philo)
 {
 	pthread_mutex_unlock(&philo->prev->fork);
 	pthread_mutex_unlock(&philo->fork);
 }
 
-/**
- * Loop for the philosopher to eat
- * 
- * @param philo a pointer to the philosopher struct
- */
 void	philo_eat(t_philo *philo)
 {
 	if (check_stop(philo->data))
@@ -75,11 +65,6 @@ void	philo_eat(t_philo *philo)
 	}
 }
 
-/**
- * Loop for the philosopher to sleep
- * 
- * @param philo a pointer to the philosopher struct
- */
 void	philo_sleep(t_philo *philo)
 {
 	if (check_stop(philo->data))
@@ -94,11 +79,6 @@ void	philo_sleep(t_philo *philo)
 	}
 }
 
-/**
- * Loop for the philosopher to think
- * 
- * @param philo a pointer to the philosopher struct
- */
 void	philo_think(t_philo *philo)
 {
 	if (check_stop(philo->data))
