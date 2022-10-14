@@ -3,6 +3,9 @@ Project 9: Philosophers - Ninth project for the formation of software engineers 
 
 - This project is about the basics of threading a process. How to create threads and use mutexes.
 
+## This project was like this:
+![philo](https://user-images.githubusercontent.com/83036509/195736506-28f72fd7-3b88-48f3-8b93-01e2c5648938.gif)
+
 ## Sumary
 
 #### Necessary concepts
