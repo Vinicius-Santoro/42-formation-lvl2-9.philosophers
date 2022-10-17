@@ -1,7 +1,7 @@
-# 42-formation-lvl2-9.philosophers
-Project 9: Philosophers - Ninth project for the formation of software engineers at school 42 São Paulo.
+# 42-formation-lvl2-10.net_pratice
+Project 10: Net Pratice - Tenth project for the formation of software engineers at school 42 São Paulo.
 
-- This project is a general practical exercise to let discover networking.
+- This project is about the basics of threading a process. How to create threads and use mutexes.
 
 ## This project was like this:
 ![philo](https://user-images.githubusercontent.com/83036509/195736506-28f72fd7-3b88-48f3-8b93-01e2c5648938.gif)
@@ -18,24 +18,46 @@ Some necessary concepts to develop this project.
 - [What are processes?](readmes/necessary_concepts.md)
 - [Difference between processes and threads](readmes/necessary_concepts.md)
 
+#### Extern functions
+
+We can use some extern functions. Follows a description of each of them.
+
+- [memset](readmes/extern_functions.md)
+- [malloc](readmes/extern_functions.md)
+- [free](readmes/extern_functions.md)
+- [write](readmes/extern_functions.md)
+- [usleep](readmes/extern_functions.md)
+- [gettimeofday](readmes/extern_functions.md)
+- [pthread_create](readmes/extern_functions.md)
+- [pthread_join](readmes/extern_functions.md)
+- [pthread_mutex_init](readmes/extern_functions.md)
+- [pthread_mutex_lock](readmes/extern_functions.md)
+- [pthread_mutex_unlock](readmes/extern_functions.md)
+- [pthread_mutex_destroy](readmes/extern_functions.md)
+
 #### Useful links:
 
-- [Diferenças entre roteador, switch, modem e hub](https://www.infowester.com/hubswitchrouter.php)
-- [Introdução de Endereçamento IP Classful](https://acervolima.com/introducao-de-enderecamento-ip-classful-1/#:~:text=tem%208%20bits.-,Os%20bits%20de%20ordem%20superior%20do%20primeiro%20octeto%20de%20endere%C3%A7os,classe%20C%20%C3%A9%20255.255.255)
-- [Subrede IP: Máscaras possíveis para classes A, B e C](http://www.dltec.com.br/blog/redes/subrede-ip-mascaras-possiveis-e-quantidades-para-classes-a-b-e-c-curso-ccna/)
-- [Entendendo o endereçamento IP](https://www.hardware.com.br/livros/linux-redes/capitulo-entendendo-enderecamento.html)
-- [IP Subnet Calculator](https://www.calculator.net/ip-subnet-calculator.html?cclass=c&csubnet=25&cip=6.120.49.126&ctype=ipv4&printit=0&x=90&y=17)
-- [Configuração de Roteamento Estático](https://www.youtube.com/watch?v=HjMBWPyLk3U&ab_channel=SamuelHenriqueBuckeBrito)
-- [Roteamento Estático e Rota Default](https://www.youtube.com/watch?v=EZc4xUtfd6Y&t=98s&ab_channel=GustavoKalau)
+- [Short introduction to threads (pthreads)](https://youtu.be/d9s_d28yJq0)
+- [Difference between processes and threads](https://youtu.be/IKG1P4rgm54)
+- [What is a mutex in C?](https://youtu.be/oq29KUy29iQ)
+- [Multithreading in C](https://www.geeksforgeeks.org/multithreading-c-2/)
+- [Mutex lock for Linux Thread Synchronization](https://www.geeksforgeeks.org/mutex-lock-for-linux-thread-synchronization/#:~:text=A%20Mutex%20is%20a%20lock,the%20locked%20region%20of%20code.)
+- [Dining Philosopher Problem - Simplified](https://youtu.be/VSkvwzqo-Pk)
+- [Dining Philosopher Problem Using Semaphores](https://www.geeksforgeeks.org/dining-philosopher-problem-using-semaphores/)
+- [Dining Philosophers Problem with Solution](https://youtu.be/NbwbQQB7xNQ)
 
-#### Tasks
-- [level 01](readmes/)
-- [level 02](readmes/)
-- [level 03](readmes/)
-- [level 04](readmes/)
-- [level 05](readmes/)
-- [level 06](readmes/)
-- [level 07](readmes/)
-- [level 08](readmes/)
-- [level 09](readmes/)
-- [level 10](readmes/)
+#### How the project works
+
+- [Dining philosophers problem](readmes/how_the_project_works.md)
+- [How to test it](readmes/how_the_project_works.md)
+- [Arguments](readmes/how_the_project_works.md)
+
+#### Project documentation
+- [main.c](readmes/main.md)
+- [utils.c](readmes/utils.md)
+- [init_list.c](readmes/init_list.md)
+- [thread.c](readmes/thread.md)
+- [philo_actions.c](readmes/philo_actions.md)
+- [mutex_check.c](readmes/thread.md)
+- [death_check.c](readmes/death_check.md)
+- [free.c](readmes/free.md)
