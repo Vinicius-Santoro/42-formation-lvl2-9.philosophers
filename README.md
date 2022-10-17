@@ -1,4 +1,4 @@
-# 42-formation-lvl2-10.net_pratice
+# 42-formation-lvl2-9.philosophers
 
 Project 9: philosophers - Ninth project for the formation of software engineers at school 42 São Paulo.
 
