@@ -1,5 +1,6 @@
 # 42-formation-lvl2-10.net_pratice
-Project 10: Net Pratice - Tenth project for the formation of software engineers at school 42 São Paulo.
+
+Project 9: philosophers - Ninth project for the formation of software engineers at school 42 São Paulo.
 
 - This project is about the basics of threading a process. How to create threads and use mutexes.
 
